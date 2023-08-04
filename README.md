@@ -45,5 +45,5 @@ srun --overlap --oversubscribe --mem=220GB --unbuffered --distribution=block:blo
 This will create a separate log file for each node with the Slurm job
 id appended, e.g. `checkmem-nid004263-4103755.out`.  As supplied
 `run_check_mem.sh` runs `check_mem.sh` so it reports the free memory
-(in KB) per node every 60 seconds -- just edit it to change, for
+(in KB) per node every 60 seconds - just edit it to change, for
 example, the frequency.
