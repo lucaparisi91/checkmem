@@ -47,3 +47,9 @@ id appended, e.g. `checkmem-nid004263-4103755.out`.  As supplied
 `run_check_mem.sh` runs `check_mem.sh` so it reports the free memory
 (in KB) per node every 60 seconds - just edit it to change, for
 example, the frequency.
+
+> [!IMPORTANT]
+>
+> Both the scripts need to be executable - after downloading them, issue:
+>
+> `chmod +x *.sh`
