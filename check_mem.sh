@@ -37,7 +37,7 @@ if [ $record_per_process == 1 ]
 then 
     echo "Step Memory Pid Name"
 else
-    echo "Step Memory"
+    echo "Step total used free shared buff/cache available "
 fi
 
 i=1
@@ -49,7 +49,7 @@ do
         ps -F | tail -n +2 | awk "{ if (\$6 > $min_memory) print $i,\$6,\$2,\$11 }"
     else
     # saves system wide memory usage
-        free --kilo | grep Mem | awk "{if (\$3 > $min_memory) print $i,\$3}"
+        free --kilo | grep Mem | awk "{if (\$3 > $min_memory) print $i,\$2,\$3,\$4,\$5,\$6,\$7}"
     fi
     sleep $interval
 
