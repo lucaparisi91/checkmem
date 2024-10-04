@@ -30,6 +30,7 @@ You can find an example script below for ARCHER2.
 #SBATCH --partition=standard
 #SBATCH --qos=short
 
+export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 export OMP_NUM_THREADS=1
 
 # Need overlap, oversubscribe and mem options to have two sruns running at the same time
