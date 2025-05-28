@@ -30,6 +30,7 @@ You can find an example script below for ARCHER2.
 #SBATCH --partition=standard
 #SBATCH --qos=short
 
+export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 export OMP_NUM_THREADS=1
 
 # Need overlap, oversubscribe and mem options to have two sruns running at the same time
@@ -44,7 +45,7 @@ srun --overlap --oversubscribe --mem=220GB --unbuffered --distribution=block:blo
 
 This will create a separate log file for each node with the Slurm job
 id appended, e.g. `checkmem-nid004263-4103755.out`.  As supplied
-`run_check_mem.sh` runs `check_mem.sh` so it reports the free memory
+`run_check_mem.sh` runs `check_mem.sh` so it reports the memory consumed
 (in KB) per node every 60 seconds - just edit it to change, for
 example, the frequency.
 
